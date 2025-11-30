@@ -6,6 +6,13 @@ Python script that provides stats about Nginx logs stored in MongoDB
 from pymongo import MongoClient
 
 def main():
+    """
+    Connects to the MongoDB 'logs' database, retrieves statistics from the
+    'nginx' collection, and prints:
+      - Total number of logs
+      - Number of logs by HTTP method (GET, POST, PUT, PATCH, DELETE)
+      - Number of GET requests to '/status'
+    """
     # Connect to MongoDB
     client = MongoClient('mongodb://localhost:27017')
     db = client.logs
