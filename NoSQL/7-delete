@@ -1,0 +1,6 @@
+// Use the "school" collection in the current database
+// Delete all documents where the field "name" equals "Holberton school"
+
+db.school.deleteMany(
+    { name: "Holberton school" } // Match condition
+);
